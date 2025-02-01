@@ -3,12 +3,17 @@ import {ButtonNumbers} from "ui/components/Calculator/calculatorTable/buttons/bu
 
 export const CalculatorTable = () => {
     const [count, setCount] = useState(0)
+    const onButtonClickHandler=(num:number)=>{
+        debugger
+        setCount(num)
+
+    }
     return (
         <div>
             <div>
-                {count}
+               <input type='text' value= {count}  readOnly={true}/>
             </div>
-            <ButtonNumbers/>
+            <ButtonNumbers onChange={()=>onButtonClickHandler(count)}/>
         </div>
     );
 };
