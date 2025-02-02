@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import {ButtonNumbers} from "ui/components/Calculator/calculatorTable/buttons/buttonNumbers/ButtonNumbers";
 
 export const CalculatorTable = () => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState<string>('')
+
     const onButtonClickHandler=(num:number)=>{
-        debugger
-        setCount(num)
+
+        setCount(count+num)
 
     }
     return (
@@ -13,7 +14,8 @@ export const CalculatorTable = () => {
             <div>
                <input type='text' value= {count}  readOnly={true}/>
             </div>
-            <ButtonNumbers onChange={()=>onButtonClickHandler(count)}/>
+            <ButtonNumbers onChange={(pushNumber)=>onButtonClickHandler(pushNumber)}/>
+
         </div>
     );
 };
