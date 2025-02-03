@@ -1,18 +1,23 @@
 import React, {useState} from 'react';
 import {ButtonNumbers} from "ui/components/Calculator/calculatorTable/buttons/buttonNumbers/ButtonNumbers";
-
+import style from 'styles/input.module.css'
 export const CalculatorTable = () => {
     const [count, setCount] = useState<string>('')
 
-    const onButtonClickHandler=(num:number)=>{
+    const onButtonClickHandler=(num:string)=>{
+if(num === '0'){
+    return setCount('0')
+}else{
+    setCount(count+num)
+}
 
-        setCount(count+num)
 
     }
     return (
         <div>
-            <div>
-               <input type='text' value= {count}  readOnly={true}/>
+            <div className={style.inputContainer}>
+               <input type='text' value= {count}  readOnly={true} className={style.input}/>
+
             </div>
             <ButtonNumbers onChange={(pushNumber)=>onButtonClickHandler(pushNumber)}/>
 
