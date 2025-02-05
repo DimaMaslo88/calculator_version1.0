@@ -5,24 +5,32 @@ import {buttonsArray} from "state/store";
 
 export const CalculatorTable = () => {
     const [count, setCount] = useState<string>('')
-    const [result, setResult] = useState<string>('0')
+    const [result, setResult] = useState<number>(0)
 
     const onButtonClickHandler = (num: string) => {
         if (num === '0') {
             setCount('0')
+        } else if (num === '=') {
+            setResult(eval(count).toString())
+
         } else {
             setCount(count + num)
         }
 
-        if (num) {
-            // return alert("Hello")
-           return  setResult(eval(count + num).toString())
-        }
+
     }
     const onSpecialSymbolsClickHandler = (symbol: string) => {
-        if (symbol === 'AC') {
+        if (symbol === 'AC' && count === '') {
+            setCount('0')
+            setResult(0)
+        } else if (symbol === 'AC' && count.length > 1) {
             setCount('')
-            setResult('0')
+            setResult(0)
+        } else if (symbol === 'OFF') {
+            setCount('')
+            setResult(0)
+        } else {
+            return
         }
 
 

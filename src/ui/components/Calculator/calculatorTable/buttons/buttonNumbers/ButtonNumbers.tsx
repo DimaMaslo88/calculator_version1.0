@@ -1,5 +1,4 @@
 import React  from 'react';
-
 import style from 'styles/buttons.module.css'
 import {buttonsArray, specialButtons} from "state/store";
 import {ButtonsArrayType, SpecialButtonsType} from "types/types";
