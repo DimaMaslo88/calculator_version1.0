@@ -1,6 +1,34 @@
-.buttonsContainer{
+.buttonsContainer {
     display: grid;
-    grid-template-columns:repeat(3,1fr);
-    grid-gap: 10px;
+    grid-template-columns:repeat(3, 1fr);
+    grid-gap: 20px;
+
+}
+.symbolButtons,.buttonsSign,.numberButtons{
+    border: none;
+
+}
+.symbolButtons,.buttonsSign,.numberButtons:hover{
+    cursor: pointer;
+
+}
+.symbolButtons,.buttonsSign{
+    border-radius: 5px;
+}
+.symbolButtons{
+    background-color:gray;
+
+}
+.numberButtons{
+    width: 100%;
+    height: 200%;
+    background-color: skyblue;
+    border-radius: 50%;
+
+
+}
+.buttonsSign{
+    background-color: darkorange;
+
 
 }

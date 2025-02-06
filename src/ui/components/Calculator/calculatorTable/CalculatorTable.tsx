@@ -23,8 +23,8 @@ export const CalculatorTable = () => {
         if (symbol === 'AC' && count === '') {
             setCount('0')
             setResult(0)
-        } else if (symbol === 'AC' && count.length > 1) {
-            setCount('')
+        } else if (symbol === 'AC' && count.length >= 1) {
+            setCount('0')
             setResult(0)
         } else if (symbol === 'OFF') {
             setCount('')

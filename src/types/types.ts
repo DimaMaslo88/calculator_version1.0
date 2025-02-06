@@ -1,9 +1,7 @@
-export type ButtonsArrayType={
+export type universalSymbolsType={
     id:number,
     title:string
 }
 
-export type SpecialButtonsType={
-    id:number,
-    title:string
-}
+
+
